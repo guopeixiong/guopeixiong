@@ -4,7 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+/*
+    此类实现ActionListener接口，为监视器类，处理添加学生的操作
+ */
 public class AddStu implements ActionListener {
     JTextField field1,filed2;
     JButton button;
@@ -14,6 +16,10 @@ public class AddStu implements ActionListener {
        this.button=button;
    }
     @Override
+    /*
+    按下按钮首先检测文本框内是否输入完整没则弹出对应提醒，输入完整则创建一个student实例并存放在ArrayList中
+    ，并弹出提醒添加成功
+     */
     public void actionPerformed(ActionEvent e) {
        if(!field1.getText().equals(" ")&&!field1.getText().equals(null)&&!filed2.getText().equals(" ")&&!filed2.getText().equals(null)){
            String name=field1.getText().trim();

@@ -5,7 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+/*
+此类为该系统的图形界面
+ */
 public class SystemView {
     private JFrame frame;
     private JTabbedPane jTabbedPane;
@@ -14,16 +16,20 @@ public class SystemView {
     private JTextField f11,f12,f21,f22,f3,f4;
     private JTextArea showMessage;
     private JButton b1,b2,b3,b4,b5;
-    static ArrayList<Student>students=Student.students;
+    //在构造方法中完成各种组件的实例化与设置
     public SystemView(){
+        //设置系统字体
         Font size=new Font("微软雅黑",Font.BOLD,30);
+        //实例化并设置底层容器
         frame=new JFrame("学生信息管理系统");
         frame.setFont(size);
         frame.setBounds(300,300,1800,1200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //实例化并设置选项卡格窗
         jTabbedPane=new JTabbedPane();
         jTabbedPane.setFont(size);
         jTabbedPane.setVisible(true);
+        //实例化并设置面板
         p1=new JPanel();
         p1.setLayout(null);
         p1.setVisible(true);
@@ -36,6 +42,7 @@ public class SystemView {
         p4=new JPanel();
         p4.setLayout(null);
         p4.setVisible(true);
+        //实例化并设置标签
         l11=new JLabel("姓名：");
         l11.setFont(size);
         l11.setBounds(500,300,100,50);
@@ -60,6 +67,7 @@ public class SystemView {
         l4.setFont(size);
         l4.setBounds(775,300,250,50);
         l4.setVisible(true);
+        //实例化并设置文本框
         f11=new JTextField(" ");
         f11.setFont(size);
         f11.setBounds(600,300,600,50);
@@ -84,10 +92,12 @@ public class SystemView {
         f4.setFont(size);
         f4.setBounds(600,400,600,50);
         f4.setVisible(true);
+        //实例化并设置文本区区
         showMessage=new JTextArea();
         showMessage.setFont(size);
         showMessage.setBounds(600,600,600,250);
         showMessage.setVisible(false);
+        //实例化并设置按钮
         b1=new JButton("确认");
         b1.setFont(size);
         b1.setBounds(800,500,200,50);
@@ -116,6 +126,7 @@ public class SystemView {
                 b5.setVisible(false);
             }
         });
+        //将组件添加到对应的面板中，再将面板添加到选项卡格窗中
         p1.add(l11);
         p1.add(l12);
         p1.add(f11);
@@ -138,8 +149,10 @@ public class SystemView {
         p4.add(f4);
         p4.add(b4);
         jTabbedPane.add("删除学生信息",p4);
+        //将选项卡格窗添加到底层容器中
         frame.add(jTabbedPane);
         frame.setVisible(true);
+        //创建监视器并未相应的组件注册监视器
         AddStu addStu=new AddStu(f11,f12,b1);
         b1.addActionListener(addStu);
         SetStu setStu=new SetStu(f21,f22,b2);
