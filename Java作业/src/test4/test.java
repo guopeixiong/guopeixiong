@@ -16,7 +16,7 @@ public class test {
         while(sc.hasNext()){
             String grade=sc.next();
             try{
-                if (!grade.matches("\\d{0,3}")){
+                if (!grade.matches("\\d{1,3}")){
                     throw new MyException(){
                       public String getMessage(){
                           return "输入的成绩中有非数字";
