@@ -4,7 +4,7 @@ import java.util.Scanner;
 class MyException extends Exception{
     public MyException(){}
 }
-public class test {
+public class Test {
     public static void main(String[] args) {
         System.out.println("请输入成绩,中间用空格隔开:");
         Scanner scanner=new Scanner(System.in);
