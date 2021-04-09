@@ -2,11 +2,6 @@ package test4;
 
 import java.util.Scanner;
 
-class NotNumberException extends Exception{
-    public NotNumberException(String message){
-        super(message);
-    }
-}
 class OutException extends Exception{
     public OutException(String message){
         super(message);
