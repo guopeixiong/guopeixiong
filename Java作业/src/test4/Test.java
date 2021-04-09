@@ -1,5 +1,4 @@
 package test4;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 class MyException extends Exception{
     public MyException(){}
