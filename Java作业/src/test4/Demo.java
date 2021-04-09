@@ -13,7 +13,7 @@ class OutException extends Exception{
     }
 }
 public class Demo {
-    public static int getIntNumber(Scanner sc) throws NotNumberException{
+    public static int getIntNumber(Scanner sc){
         System.out.println("请输入成绩:");
         int i=0;
         String str="";
@@ -21,7 +21,7 @@ public class Demo {
             str=sc.nextLine();
             i=Integer.parseInt(str);
         }catch(NumberFormatException e){
-            throw new NotNumberException("该成绩不是数字!");
+            System.out.println("该成绩不是数字!");
         }
         finally {
             return i;
@@ -32,7 +32,6 @@ public class Demo {
             throw new OutException("该成绩不在0~100之间");
         }
     }
-
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int sum=0;
@@ -41,14 +40,15 @@ public class Demo {
             try {
                 int a = getIntNumber(sc);
                 isOut(a);
-                sum += a;
-                students++;
-            } catch (NotNumberException e) {
-                System.out.println(e.getMessage());
-            } catch (OutException e) {
+                if (a!=0){
+                    sum += a;
+                    students++;
+                }
+            }catch (OutException e) {
                 System.out.println(e.getMessage());
             }
         }
         System.out.println("成绩总和:"+sum+",平均成绩:"+(double)sum/students);
+        System.out.println(students);
     }
 }
