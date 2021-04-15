@@ -1,6 +1,5 @@
 package test5;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.Scanner;
 
 public class test {
