@@ -132,6 +132,8 @@ public class Windows implements ActionListener {
         }else {
             l1.setVisible(false);
             l2.setVisible(false);
+            t1.setText(null);
+            t2.setText(null);
             t3.setText(null);
         }
 
