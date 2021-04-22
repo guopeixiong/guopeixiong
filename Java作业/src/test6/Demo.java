@@ -72,7 +72,6 @@ public class Demo extends JFrame implements ActionListener {
         p.add(b5);
         p.setLocation(0,500);
         p.setSize(1000,100);
-        p.setVisible(true);
 
         this.add(t1);
         this.add(t2);
