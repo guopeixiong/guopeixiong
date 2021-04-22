@@ -13,6 +13,7 @@ public class Dianyuan {
                    sleep(10);
                }catch (Exception e){
                    e.printStackTrace();
+
                }
                notify();
            } else {

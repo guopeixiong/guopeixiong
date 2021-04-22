@@ -27,6 +27,7 @@ class Simulator{
     public void playSound(Animal animal){
         System.out.println(animal.getAnimalName());
         animal.cry();
+
     }
     public static void main(String args[]){
         Simulator simulator=new Simulator();

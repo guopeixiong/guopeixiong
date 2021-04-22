@@ -1,11 +1,10 @@
 package test5;
 
 import java.util.Scanner;
-
-public class test {
+public class Test {
     public static int myParseInt(String str){
         String s = str.replaceAll("[^0-9]+", "*");
-        if (s.matches("[*]+?")){
+        if (s.matches("[*]+")){
             return 0;
         }
         else{
@@ -19,7 +18,6 @@ public class test {
             return Integer.parseInt(s1);
         }
     }
-
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("请输入字符串:");
