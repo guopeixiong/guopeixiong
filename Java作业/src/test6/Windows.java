@@ -31,7 +31,7 @@ public class Windows implements ActionListener {
         t3=new JTextField();
         l1=new JLabel(" ");
         l2=new JLabel("=");
-        //设置个组件位置,及大小
+        //设置组件位置,及大小
         jFrame.setBounds(300,500,2000,600);
         b1.setBounds(675,350,100,100);
         b2.setBounds(825,350,100,100);
@@ -43,7 +43,7 @@ public class Windows implements ActionListener {
         t3.setBounds(1400,100,300,100);
         l1.setBounds(650,100,50,100);
         l2.setBounds(1250,100,50,100);
-        //设置各组件字体
+        //设置组件字体
         jFrame.setFont(font);
         b1.setFont(font);
         b2.setFont(font);
