@@ -120,6 +120,6 @@ public class Demo extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        Demo demo=new Demo("计算机");
+        Demo demo=new Demo("计算");
     }
 }
