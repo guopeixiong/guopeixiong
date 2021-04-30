@@ -80,5 +80,6 @@ class Test{
         String dst = scanner.nextLine();
         CopyPic copy = new CopyPic(src,dst);
         System.out.println(copy.copy());
+        scanner.close();
     }
 }
