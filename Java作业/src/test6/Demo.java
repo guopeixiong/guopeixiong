@@ -14,7 +14,7 @@ public class Demo extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setBounds(500,500,1000,700);
-        font=new Font("宋体",Font.BOLD,35);
+        font=new Font("宋体", Font.BOLD,35);
 
         b1=new JButton("和");
         b1.setFont(font);
