@@ -9,28 +9,35 @@ public class CopyPic {
         this.srcPath = srcPath;
         this.dstPath = dstPath;
     }
+    //判断源文件是否存在且目的地址是一个目录
     public int detect(){
         File src = new File(this.srcPath);
         File des = new File(this.dstPath);
         if (src.exists() && src.isFile()){
-            return 1;
+            if (des.isDirectory()){
+                return 1;
+            }
+            return 0;
         }
         return 0;
     }
     public int copy(){
+        //返回判断后的值后续判断是否进行复制
         int i=this.detect();
         InputStream in = null;
         OutputStream out = null;
+        //判断后地址及文件无误,开始复制
         if (i==1){
             try {
                 in = new FileInputStream(new File(srcPath));
-                out = new FileOutputStream(new File(dstPath+"\\(复制版)"+copyFiletype(srcPath)));
+                //获取复制路径后获取复制的文件类型,在复制目的地中被复制的文件文件名与源文件相同但在文件名前加了个(复制版)
+                out = new FileOutputStream(new File(dstPath+"\\(复制版)"+getCopyFiletype(srcPath)));
                 byte[] buffer=new byte[1024];
-                int len;
+                int len;//记录每次读取的字节数,方便后续写入
                 while ((len=in.read(buffer))!=-1){
                     out.write(buffer,0,len);
                 }
-                return 1;
+                return 1;//复制结束,返回1
                 }catch (IOException e){
                     return 0;
                 }finally {
@@ -52,7 +59,8 @@ public class CopyPic {
             }
         return 0;
     }
-    public static String copyFiletype(String str){
+    //获取要复制的文件的类型
+    public static String getCopyFiletype(String str){
         return str.substring(str.lastIndexOf("\\")+1);
     }
     public  String getSrcPath() {
