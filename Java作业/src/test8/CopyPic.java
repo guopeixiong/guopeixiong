@@ -85,7 +85,7 @@ class Test{
         String src = scanner.nextLine();
         System.out.println("请输入复制目的地址:");
         String dst = scanner.nextLine();
-        text7.CopyPic copy = new text7.CopyPic(src,dst);
+        CopyPic copy = new CopyPic(src,dst);
         System.out.println(copy.copy());
         scanner.close();
     }
