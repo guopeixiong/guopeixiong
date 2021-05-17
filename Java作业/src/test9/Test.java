@@ -89,16 +89,7 @@ class StuManage{
         for (int i=0;i<stus.length;i++){
             if (stus[i]==null){
                 stus[i]=new Student(name,ID);
-                try {
-                    FileWriter writer=new FileWriter(new File("D:\\guopeixiong\\Java作业\\src\\test9","student.txt"),true);
-                    BufferedWriter out=new BufferedWriter(writer);
-                    out.write(stus[i].getID()+stus[i].getName());
-                    out.newLine();
-                    out.flush();
-                    out.close();
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
+                this.refresh();
                 result=0;
                 break;
             }
