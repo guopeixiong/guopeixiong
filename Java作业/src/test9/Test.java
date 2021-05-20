@@ -2,33 +2,6 @@ package test9;
 
 import java.io.*;
 
-class Student{
-    private String name;
-    private String ID;
-    public Student(String name,String ID){
-        this.name=name;
-        this.ID=ID;
-    }
-    public String getID() {
-        return ID;
-    }
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String toString(){
-        String str="ID:";
-        str+=this.ID;
-        str+=",name:";
-        str+=this.name;
-        return str;
-    }
-}
 class StuManage{
     Student[] stus;
     final int minNums=10;
@@ -50,6 +23,7 @@ class StuManage{
                 String name="";
                 for (int i=0;i<str.length();i++){
                     char c=str.charAt(i);
+
                     if (Character.isDigit(c)){
                         ID+=c;
                     }else{
