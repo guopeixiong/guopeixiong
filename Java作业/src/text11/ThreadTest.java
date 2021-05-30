@@ -40,14 +40,5 @@ public class ThreadTest {
                 e.printStackTrace();
             }
         }
-        for (int i=5;i>0;i--){
-            for (int j=60;j>0;j--){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 }
