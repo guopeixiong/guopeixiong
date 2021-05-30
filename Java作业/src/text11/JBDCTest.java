@@ -19,6 +19,9 @@ public class JBDCTest {
                 }
                 System.out.println();
             }
+            rs.close();
+            sql.close();
+            con.close();
         } catch (Exception e) {
             System.out.println(e);
         }
