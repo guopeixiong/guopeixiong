@@ -3,7 +3,7 @@ package text11;
 class Thread1 extends Thread{
     @Override
     public void run() {
-        for (int i=0;i<=10;i++){
+        for (int i=1;i<=10;i++){
             System.out.println("我是线程1");
             try {
                 Thread.sleep(1000);
@@ -16,7 +16,7 @@ class Thread1 extends Thread{
 class Thread2 implements Runnable{
     @Override
     public void run() {
-        for (int i=0;i<=10;i++){
+        for (int i=1;i<=10;i++){
             System.out.println("我是线程2");
             try {
                 Thread.sleep(1000);
@@ -32,12 +32,21 @@ public class ThreadTest {
         t1.start();
         Thread t2=new Thread(new Thread2());
         t2.start();
-        for (int i=0;i<=10;i++){
+        for (int i=1;i<=10;i++){
             System.out.println("我是主线程");
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e){
                 e.printStackTrace();
+            }
+        }
+        for (int i=5;i>0;i--){
+            for (int j=60;j>0;j--){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
