@@ -10,7 +10,6 @@ public class CopyPic {
         this.srcPath = srcPath;
         this.dstPath = dstPath;
     }
-    //判断源文件是否存在且目的地址是一个目录
     public int detect(){
         File src = new File(this.srcPath);
         File des = new File(this.dstPath);
